@@ -6,7 +6,9 @@
     <div class="categories">
       <slot name="subTitle"> Заголовок </slot>
     </div>
-    <img src="@/assets/images/iphone.png" alt="IPhone" class="img" />
+    <div class="imgWrapper">
+      <img src="@/assets/images/iphone.png" alt="IPhone" class="img" />
+    </div>
   </div>
 </template>
 
@@ -16,6 +18,8 @@
 
 <style scoped>
   .category {
+    display: flex;
+    flex-direction: column;
     position: relative;
     padding: 21px 25px;
     min-width: 389px;
@@ -26,10 +30,13 @@
   }
   .categories {
     width: 150px;
+    z-index: 1;
   }
   .img {
     position: absolute;
+    width: 450px;
+    height: 450px;
     top: -15px;
-    right: -150px;
+    right: -115px;
   }
 </style>
