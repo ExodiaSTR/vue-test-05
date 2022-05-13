@@ -5,10 +5,16 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: unset;
+}
+
 :root {
   --color-white: rgb(255, 255, 255);
   --color-black: rgb(0, 0, 0);
   --color-gray: #e5eaff;
+  --color-tuquoise-light: #f1fced;
 }
 
 body {
@@ -21,7 +27,14 @@ body {
   height: 100%;
 }
 
-h5 {
+.h3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 29px;
+  line-height: 33px;
+}
+
+.h5 {
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 500;
