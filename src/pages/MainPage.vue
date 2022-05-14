@@ -60,17 +60,30 @@
         </LargeCategory>
       </div>
     </div>
+    <div class="itemsGrid">
+      <LargeProductItem />
+      <ProductItem
+        class="productItem"
+        v-for="item in productItemsData"
+        :key="item.id"
+        :items_data="item"
+      />
+    </div>
   </div>
 </template>
 
 <script>
   import TheCategory from "@/components/TheCategory.vue";
   import LargeCategory from "@/components/LargeCategory.vue";
+  import ProductItem from "@/components/ProductItem.vue";
+  import LargeProductItem from "@/components/LargeProductItem.vue";
 
   export default {
     components: {
       TheCategory,
       LargeCategory,
+      ProductItem,
+      LargeProductItem,
     },
     data: () => ({
       categoryData: [
@@ -157,6 +170,80 @@
           img: "backpack.png",
         },
       ],
+      productItemsData: [
+        {
+          title: "Смартфон Apple iPhone 11 12...",
+          regularPrice: "55 850 ₽",
+          discountPrice: "54 490 ₽",
+          id: "1",
+        },
+        {
+          title: "Смартфон Apple iPhone 11 12...",
+          regularPrice: "55 850 ₽",
+          discountPrice: "54 490 ₽",
+          id: "2",
+        },
+        {
+          title: "Смартфон Apple iPhone 11 12...",
+          regularPrice: "55 850 ₽",
+          discountPrice: "54 490 ₽",
+          id: "3",
+        },
+        {
+          title: "Смартфон Apple iPhone 11 12...",
+          regularPrice: "55 850 ₽",
+          discountPrice: "54 490 ₽",
+          id: "4",
+        },
+        {
+          title: "Смартфон Apple iPhone 11 12...",
+          regularPrice: "55 850 ₽",
+          discountPrice: "54 490 ₽",
+          id: "5",
+        },
+        {
+          title: "Смартфон Apple iPhone 11 12...",
+          regularPrice: "55 850 ₽",
+          discountPrice: "54 490 ₽",
+          id: "6",
+        },
+        {
+          title: "Смартфон Apple iPhone 11 12...",
+          regularPrice: "55 850 ₽",
+          discountPrice: "54 490 ₽",
+          id: "7",
+        },
+        {
+          title: "Смартфон Apple iPhone 11 12...",
+          regularPrice: "55 850 ₽",
+          discountPrice: "54 490 ₽",
+          id: "8",
+        },
+        {
+          title: "Смартфон Apple iPhone 11 12...",
+          regularPrice: "55 850 ₽",
+          discountPrice: "54 490 ₽",
+          id: "9",
+        },
+        {
+          title: "Смартфон Apple iPhone 11 12...",
+          regularPrice: "55 850 ₽",
+          discountPrice: "54 490 ₽",
+          id: "10",
+        },
+        {
+          title: "Смартфон Apple iPhone 11 12...",
+          regularPrice: "55 850 ₽",
+          discountPrice: "54 490 ₽",
+          id: "11",
+        },
+        {
+          title: "Смартфон Apple iPhone 11 12...",
+          regularPrice: "55 850 ₽",
+          discountPrice: "54 490 ₽",
+          id: "12",
+        },
+      ],
     }),
   };
 </script>
@@ -230,5 +317,16 @@
     bottom: -50px;
     right: -10px;
     transform: scale(-1, 1);
+  }
+  .itemsGrid {
+    margin-top: 30px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-rows: 0;
+  }
+  .productItem {
+    width: 250px;
   }
 </style>

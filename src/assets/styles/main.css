@@ -14,8 +14,11 @@ a {
   --color-white: rgb(255, 255, 255);
   --color-black: rgb(0, 0, 0);
   --color-gray: #e5eaff;
+  --color-gray-background: #f8f8f8;
+  --color-gray-dark: #878787;
   --color-tuquoise-light: #f1fced;
   --color-border: #f0f0f0;
+  --color-green: #11c86f;
 }
 
 body {
@@ -26,6 +29,10 @@ body {
   display: flex;
   padding: 21px 15px 0 15px;
   height: 100%;
+}
+
+.img {
+  mix-blend-mode: multiply;
 }
 
 .text {
