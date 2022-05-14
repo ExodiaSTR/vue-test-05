@@ -27,11 +27,9 @@
   .category {
     cursor: pointer;
     position: relative;
-    height: 155px;
+    min-height: 155px;
     min-width: 200px;
-    max-width: 250px;
-    background-color: var(--color-gray);
-    border-radius: 5px;
+    max-width: 300px;
     overflow: hidden;
   }
   .title {

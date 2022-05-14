@@ -1,13 +1,18 @@
 <template>
-  <div class="category">
+  <div class="largeCategory">
     <h3 class="title h3">
       <slot name="title"> Заголовок </slot>
     </h3>
     <div class="categories">
-      <slot name="subTitle"> Заголовок </slot>
+      <slot name="subTitle" class="text"> Заголовок </slot>
     </div>
     <div class="imgWrapper">
-      <img src="@/assets/images/iphone.png" alt="IPhone" class="img" />
+      <slot name="img" class="img"
+        ><img
+          :src="require('@/assets/images/iphone.png')"
+          alt="IPhone"
+          class="img"
+      /></slot>
     </div>
   </div>
 </template>
@@ -17,13 +22,13 @@
 </script>
 
 <style scoped>
-  .category {
+  .largeCategory {
     display: flex;
     flex-direction: column;
     position: relative;
     padding: 21px 25px;
     min-width: 389px;
-    max-width: 489px;
+    max-width: 520px;
     background-color: var(--color-tuquoise-light);
     border-radius: 5px;
     overflow: hidden;
@@ -38,5 +43,8 @@
     height: 450px;
     top: -15px;
     right: -115px;
+  }
+  .title {
+    z-index: 1;
   }
 </style>
