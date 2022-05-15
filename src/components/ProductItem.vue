@@ -1,8 +1,12 @@
 <template>
-  <div class="wrapper">
+  <div class="productItemWrapper">
     <span class="discount"> -10% </span>
     <div class="imgWrapper">
-      <img src="@/assets/images/clock.png" alt="img" class="img" />
+      <img
+        :src="require('@/assets/images/' + items_data.img)"
+        alt="img"
+        class="img"
+      />
     </div>
     <div class="itemInfos">
       <span class="title">
@@ -39,12 +43,9 @@
 </script>
 
 <style scoped>
-  .wrapper {
+  .productItemWrapper {
     cursor: pointer;
     position: relative;
-    margin-top: 30px;
-    min-width: 241px;
-    min-height: 252px;
     background-color: var(--color-gray-background);
     padding: 12px 15px;
     border-radius: 5px;
@@ -86,7 +87,8 @@
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
-    line-height: 140%;
+    white-space: nowrap;
+    overflow: hidden;
   }
   .price {
     margin-top: 5px;
@@ -119,5 +121,38 @@
   }
   .regularPrice {
     margin-top: 4px;
+  }
+  @media screen and (max-width: 850px) {
+    .title {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 11px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .discountPriceSpan,
+    .regularPriceSpan,
+    .regularPrice {
+      display: none;
+    }
+    .discountPrice {
+      white-space: nowrap;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+  @media screen and (max-width: 650px) {
+    .title {
+      width: 100%;
+      white-space: unset;
+    }
+    .imgWrapper {
+      height: 110px;
+    }
+    .img {
+      max-width: 80%;
+      max-height: 80%;
+    }
   }
 </style>

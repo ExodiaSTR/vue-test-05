@@ -1,24 +1,31 @@
 <template>
-  <div class="wrapper">
+  <div class="largeProductWrapper">
     <span class="discount"> -10% </span>
     <div class="imgWrapper">
-      <img src="@/assets/images/clock.png" alt="img" class="img" />
+      <img src="@/assets/images/iphoneItem.png" alt="img" class="img" />
     </div>
     <div class="itemInfos">
       <span class="title">
-        <slot name="title">{{ items_data.title }}</slot>
+        <slot name="title"
+          >{{ items_data.title }}Ультрабук Apple MacBook Air (2020 года)
+          (MVH22RU/A) серый Ультрабук Apple
+        </slot>
       </span>
       <div class="price">
         <div class="discountPriceWrapper">
           <span class="discountPriceSpan">С учетом бонусов</span>
           <span class="discountPrice">
-            <slot name="discountPrice"> {{ items_data.discountPrice }}</slot>
+            <slot name="discountPrice">
+              {{ items_data.discountPrice }}54 490 ₽</slot
+            >
           </span>
         </div>
         <div class="regularPriceWrapper">
           <span class="regularPriceSpan">Обычная цена</span>
           <span class="regularPrice">
-            <slot name="regularPrice">{{ items_data.regularPrice }}</slot>
+            <slot name="regularPrice"
+              >{{ items_data.regularPrice }} 55 850 ₽</slot
+            >
           </span>
         </div>
       </div>
@@ -39,15 +46,15 @@
 </script>
 
 <style scoped>
-  .wrapper {
+  .largeProductWrapper {
     cursor: pointer;
     position: relative;
-    margin-top: 30px;
-    min-width: 241px;
-    min-height: 252px;
     background-color: var(--color-gray-background);
     padding: 12px 15px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .discount {
     display: none;
@@ -65,7 +72,7 @@
     line-height: 13px;
   }
   .imgWrapper {
-    height: 210px;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,17 +114,46 @@
   .discountPriceSpan {
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 100%;
   }
   .discountPrice {
     margin-top: 4px;
     font-weight: 500;
-    font-size: 21px;
+    font-size: 37px;
     line-height: 100%;
     color: var(--color-black);
   }
   .regularPrice {
     margin-top: 4px;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 100%;
+  }
+  @media screen and (max-width: 850px) {
+    .title {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .discountPriceSpan,
+    .regularPriceSpan,
+    .regularPrice {
+      display: none;
+    }
+    .discountPrice {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+  @media screen and (max-width: 650px) {
+    .imgWrapper {
+      height: 300px;
+    }
+    .title {
+      white-space: unset;
+    }
   }
 </style>

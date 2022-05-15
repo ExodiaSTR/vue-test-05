@@ -27,9 +27,8 @@
   .category {
     cursor: pointer;
     position: relative;
-    min-height: 155px;
-    min-width: 200px;
-    max-width: 300px;
+    min-height: 125px;
+    min-width: 99px;
     overflow: hidden;
   }
   .title {
@@ -48,5 +47,11 @@
     max-height: 100%;
     right: 0;
     bottom: 0;
+  }
+  @media screen and (max-width: 450px) {
+    .img {
+      max-width: 80%;
+      max-height: 80%;
+    }
   }
 </style>
