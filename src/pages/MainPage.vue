@@ -336,8 +336,8 @@
       grid-template-rows: repeat(3, 1fr);
     }
     .secondaryLargeCategory {
-      grid-column-start: 1;
-      grid-column-end: 3;
+      grid-column-start: 2;
+      grid-column-end: 4;
       grid-row-start: 1;
       grid-row-end: 3;
     }
@@ -354,8 +354,12 @@
     .itemsFirstbox {
       gap: 3px;
     }
-  }
-  @media screen and (max-width: 450px) {
+    .largeProductItem {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
     .secondaryLargeCategoryImg {
       max-width: 100%;
       max-height: 100%;
